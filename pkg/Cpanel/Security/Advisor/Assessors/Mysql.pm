@@ -86,7 +86,7 @@ sub _check_for_db_test {
             'key'        => 'Mysql_test_database_exists',
             'text'       => $self->_lh->maketext("[asis,MySQL] test database exists."),
             'suggestion' => $self->_lh->maketext(
-                '[asis,MySQL] test database is used by numerous attacks and should be removed by running “[_1]”.',
+                'Numerous attacks exploit the [asis,MySQL] test database. To remove it, run “[_1]”.',
                 "mysql -e 'drop database test'"
             ),
         );

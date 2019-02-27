@@ -106,7 +106,7 @@ subtest 'Check for db test' => sub {
             key        => 'Mysql_test_database_exists',
             text       => 'MySQL test database exists.',
             type       => $Cpanel::Security::Advisor::ADVISE_BAD,
-            suggestion => q{MySQL test database is used by numerous attacks and should be removed by running “mysql -e 'drop database test'”.}
+            suggestion => q{Numerous attacks exploit the MySQL test database. To remove it, run “mysql -e 'drop database test'”.}
         },
     };
     cmp_assessor( 'Mysql', [$expected], 'generate_advice detects when the test database exists' );
